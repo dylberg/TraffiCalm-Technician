@@ -1,0 +1,1695 @@
+[
+  {
+    "id": "B009",
+    "category": "Driver Feedback Signs",
+    "prompt": "A Value-series sign won't enter programming with a sequence that worked on another sign. What should the tech verify before retrying?",
+    "options": [
+      "The exact model and keypad revision against the approved programming procedure",
+      "That both signs currently show the same speed threshold",
+      "That the other sign is powered on and using its normal schedule",
+      "That the bench laptop has the latest Driver Feedback Sign app"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "B011",
+    "category": "RMA / NetSuite",
+    "prompt": "Which sequence best reflects the approved RMA workflow before a replacement Sales Order?",
+    "options": [
+      "Create Case; locate original invoice; create linked RMA; create SO",
+      "Create the SO, then Case, then RMA, and look up the invoice afterward",
+      "Create an RMA first, then find the original invoice and open a Case",
+      "Open the Case and SO, close the Case, then create the RMA"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "B083",
+    "category": "Wi-Fi / Power",
+    "prompt": "A Controller has a solar panel attached, no reliable Wi-Fi, and an unknown battery voltage. Which diagnostic sequence is strongest?",
+    "options": [
+      "Isolate solar input as appropriate, verify battery/fuse, then retest after a safe power cycle",
+      "Recreate the Collaborator group and change mesh channels before power checks",
+      "Reset the local configuration without first checking the battery feed",
+      "Update the Controller application to restore the missing network"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "B084",
+    "category": "Wi-Fi / Power",
+    "prompt": "A Controller's Wi-Fi was working after startup but is absent three hours later. Power is normal. What is most likely?",
+    "options": [
+      "The normal Wi-Fi activity window expired",
+      "The Collaborator mesh group automatically changed IDs",
+      "A radar sensor caused the access point to turn off after detection",
+      "The Wi-Fi password reset itself during normal operation"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "B085",
+    "category": "Wi-Fi / Power",
+    "prompt": "A phone connects to the Controller SSID but cannot load the setup page. What should you confirm before changing hardware?",
+    "options": [
+      "Stay on the no-Internet Wi-Fi and open the local setup address",
+      "Connect to the Collaborator rather than the Controller",
+      "Switch to public Wi-Fi and try the same local hostname",
+      "Use the Pelco One iQ setup workflow instead of TC Connect"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "B086",
+    "category": "FSS Diagnostics",
+    "prompt": "A newly installed group has the correct physical wiring but a Collaborator never responds. What should be compared first?",
+    "options": [
+      "Entered six-character ID, group assignment, and device status",
+      "Replace the flasher output wiring before confirming radio status",
+      "Change the flash pattern before checking group membership",
+      "Move the system to a new mesh channel without checking recorded IDs"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "B087",
+    "category": "FSS Diagnostics",
+    "prompt": "Two Collaborators intermittently disappear when trucks park near the equipment. What is the best starting theory?",
+    "options": [
+      "RF path obstruction or antenna placement",
+      "Both units require battery upgrades regardless of measured voltage",
+      "Those two Collaborators have a different firmware version",
+      "The two units have incorrect flash duty-cycle settings"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "B088",
+    "category": "FSS Diagnostics",
+    "prompt": "A warning sign should activate only for the east approach, but both approaches trigger it. What should be reviewed?",
+    "options": [
+      "Configuration, group membership, and physical approach/output assignment",
+      "Reduce the radar minimum activation speed for both approaches",
+      "Increase Time to Cross to separate the approach activations",
+      "Change the flash rate without checking activation assignments"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "B089",
+    "category": "FSS Diagnostics",
+    "prompt": "A Controller passes bench testing using the same firmware and supply, but its mesh link becomes unreliable only after it is mounted outside. What field-specific factor should be checked first?",
+    "options": [
+      "Antenna placement and real-world line-of-sight conditions",
+      "The outdoor power supply may differ from the bench supply",
+      "The active configuration may have been changed during installation",
+      "The installed trigger wiring may differ from the bench connections"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "B090",
+    "category": "TC Connect Setup",
+    "prompt": "A radar is plugged in only after the Controller has finished booting; its setup options are absent. What should happen?",
+    "options": [
+      "Power down safely, connect radar first, reboot, then recheck setup",
+      "Reselect the radar mode without cycling power",
+      "Change the mesh channel before restarting the Controller",
+      "Re-enter Collaborator IDs to make the radar appear"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "B091",
+    "category": "TC Connect Setup",
+    "prompt": "A tech wants to add another crossing's Collaborators to the current Controller. What is the correct response?",
+    "options": [
+      "Do not mix separate crossing groups; use the proper Controller and IDs",
+      "Add all reachable Collaborators so either Controller can trigger them",
+      "Use the same mesh ID for both crossings so the groups overlap",
+      "Make a second Collaborator act as another Controller within the existing group"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "B092",
+    "category": "Push 2 Cross",
+    "prompt": "A push button operates but the flashes stop too quickly. Which programmed setting should be reviewed?",
+    "options": [
+      "Time to Cross",
+      "Flash Rate",
+      "Beacon Mode",
+      "LED Brightness"
+    ],
+    "hint": "Trace the trigger from the push button to the intended beacons and watch where the response changes."
+  },
+  {
+    "id": "B093",
+    "category": "Push 2 Cross",
+    "prompt": "One of two push buttons starts the RRFBs correctly, but the other does not. Which test most directly isolates the problem?",
+    "options": [
+      "Check the second button's input wiring and activation independently",
+      "Change the Controller's mesh antenna position before testing that input",
+      "Increase the Time to Cross setting before checking the failed button",
+      "Re-enter all Collaborator IDs because one button does not work"
+    ],
+    "hint": "Trace the trigger from the push button to the intended beacons and watch where the response changes."
+  },
+  {
+    "id": "B094",
+    "category": "Push 2 Cross",
+    "prompt": "A new crossing has LED corner rings rather than RRFB light bars. What must the setup reflect?",
+    "options": [
+      "Select the proper MUTCD Ring flasher type",
+      "Select the standard beacon mode without changing flasher type",
+      "Select Other, the setting used for RRFB bars and legacy flashers",
+      "Keep the previous RRFB selection because all LED flashers are treated alike"
+    ],
+    "hint": "Trace the trigger from the push button to the intended beacons and watch where the response changes."
+  },
+  {
+    "id": "B095",
+    "category": "Push 2 Cross",
+    "prompt": "A crosswalk was programmed as a standard button system but uses an audible/talking button. What should be corrected?",
+    "options": [
+      "Select the installed button/device type in Push 2 Cross",
+      "Adjust duty cycle instead of selecting the installed input device",
+      "Change the flasher type even if the light hardware is unchanged",
+      "Increase Time to Cross without changing the selected device type"
+    ],
+    "hint": "Trace the trigger from the push button to the intended beacons and watch where the response changes."
+  },
+  {
+    "id": "B096",
+    "category": "Chevron",
+    "prompt": "In a dual-direction Chevron layout, the visual sequence runs backward relative to traffic. What should be investigated?",
+    "options": [
+      "Physical A/B connections and direction mapping",
+      "Change the minimum radar activation speed",
+      "Change the Hold Time to make the direction appear correct",
+      "Reverse the displayed location names without checking output wiring"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B097",
+    "category": "Chevron",
+    "prompt": "On the documented dual-direction Chevron design, Output A is intended to sequence which way?",
+    "options": [
+      "Away from the Controller",
+      "Toward the Controller",
+      "To warning-sign Collaborators only",
+      "In both directions simultaneously"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B098",
+    "category": "Chevron",
+    "prompt": "On the documented dual-direction Chevron design, Output B is intended to sequence which way?",
+    "options": [
+      "Toward the Controller",
+      "Away from the Controller",
+      "In both directions simultaneously",
+      "To the radar input regardless of physical direction"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B099",
+    "category": "Chevron",
+    "prompt": "Eight chevrons are assigned subset size four. What sequencing behavior should you expect?",
+    "options": [
+      "Positions 1 and 5, 2 and 6, 3 and 7, 4 and 8 pair together",
+      "Only positions one through four flash and the rest remain off",
+      "All eight units flash one after another, without pairing",
+      "Adjacent pairs 1/2, 3/4, 5/6, 7/8 flash together"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B100",
+    "category": "Chevron",
+    "prompt": "A Chevron warning sign is being entered into the list reserved for sequenced Chevrons. What's wrong?",
+    "options": [
+      "Warning-sign Collaborators should be assigned to their own group",
+      "Enter the Controller ID into the Chevron sequence list to represent the warning sign",
+      "Set the warning sign to the correct output but keep it inside the Chevron-only group",
+      "Include the warning sign with the Chevron sequence and move it to the first position"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B101",
+    "category": "Chevron",
+    "prompt": "A curve warning system must activate only above a selected vehicle speed. Which feature is being used?",
+    "options": [
+      "Minimum activation speed",
+      "Excessive-speed escalation threshold",
+      "Chevron cycle period",
+      "Flasher hold time"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B102",
+    "category": "Chevron",
+    "prompt": "A Chevron system continues flashing too long after the final vehicle detection. Which setting matters?",
+    "options": [
+      "Hold time",
+      "Minimum activation speed",
+      "Chevron cycle period",
+      "Excessive-speed escalation threshold"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "B103",
+    "category": "Firmware / Tools",
+    "prompt": "The PIC firmware update succeeded, but mesh visibility disappeared. Which firmware layer should be investigated separately?",
+    "options": [
+      "Synapse mesh module image/communication",
+      "The PIC application image alone",
+      "The Controller's Wi-Fi user interface alone",
+      "The PIC bootloader image alone"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "B104",
+    "category": "Firmware / Tools",
+    "prompt": "A Controller was accidentally loaded with a Collaborator application image. What behavior might change?",
+    "options": [
+      "It may identify or behave as the wrong device role",
+      "The device can lose its saved time-zone setting but retain the Controller role",
+      "Only the flashing duty cycle changes; the reported device role remains fixed",
+      "The board always becomes a Basic unit because firmware cannot contain a role"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "B105",
+    "category": "Firmware / Tools",
+    "prompt": "The team needs to update the PIC application through a supported serial bootloader. Which tool was used?",
+    "options": [
+      "mcbootflash",
+      "MPLAB IPE with PICkit",
+      "Synapse Portal with SNAP Stick",
+      "The DFB Web Serial updater"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "B106",
+    "category": "Firmware / Tools",
+    "prompt": "The team needs to update just the mesh radio image on a compatible controller. What is the expected tool path?",
+    "options": [
+      "SNAP Stick with Synapse programming workflow",
+      "The DFB USB-C browser updater",
+      "MPLAB IPE with PICkit",
+      "mcbootflash over the radar serial port"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "B107",
+    "category": "Firmware / Tools",
+    "prompt": "A board reports unexpected firmware after programming. What is the most useful verification?",
+    "options": [
+      "Read device information/firmware and confirm against intended file",
+      "Check the program tool's success message without querying the board",
+      "Compare the board's work-order number to the customer invoice",
+      "Read only the file name stored on the technician's laptop"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "B108",
+    "category": "Bench / Serial",
+    "prompt": "Which Tera Term command is listed for general Controller information?",
+    "options": [
+      "ATI",
+      "ATIV",
+      "ATI2",
+      "ATI4"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B109",
+    "category": "Bench / Serial",
+    "prompt": "Which dedicated Tera Term command is listed for checking the firmware version?",
+    "options": [
+      "ATIV",
+      "ATI4",
+      "ATI2",
+      "AT*IR1"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B110",
+    "category": "Bench / Serial",
+    "prompt": "Which command is used to see the stored build/work-order information?",
+    "options": [
+      "AT*IR1",
+      "AT*IR0",
+      "ATI2",
+      "ATI4"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B111",
+    "category": "Bench / Serial",
+    "prompt": "A technician wants to check the stored unit serial number without changing it. Which command fits?",
+    "options": [
+      "AT*N?",
+      "AT*IW1",
+      "AT*N123456ABC",
+      "AT*R3S3T"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B112",
+    "category": "Bench / Serial",
+    "prompt": "A controller terminal shows scrambled formatting. Which non-destructive check is appropriate?",
+    "options": [
+      "Verify serial settings and terminal receive-newline configuration",
+      "Reset stored settings before checking the terminal display",
+      "Reflash the PIC application to correct line endings",
+      "Reprogram the mesh channel to correct serial-text formatting"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B113",
+    "category": "Bench / Serial",
+    "prompt": "A tech gets no response over the radar port. What should be inspected before reprogramming anything?",
+    "options": [
+      "COM port, adapter, cable pinout, and connector seating",
+      "Rebuild the collaborator group before confirming serial communication",
+      "Reflash the PIC application before checking signal levels",
+      "Factory-reset the Controller before checking the cable"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B114",
+    "category": "Bench / Serial",
+    "prompt": "Why must you verify voltage levels and pin assignments before connecting a modified USB/serial adapter to a Controller?",
+    "options": [
+      "Wrong voltage levels or wire positions can prevent communication or damage hardware",
+      "Incorrect wiring affects only Wi-Fi setup, not serial communication",
+      "USB ports automatically translate incompatible TTL and RS-232 levels",
+      "The adapter will always correct an incorrect TX/RX pin order"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "B115",
+    "category": "Power / Dimming",
+    "prompt": "During a bench dimming test, LED output will not change while solar input is connected. What check is relevant?",
+    "options": [
+      "Isolate solar input as instructed and repeat dimming test",
+      "Replace the ambient-light sensor before isolating solar power",
+      "Increase the flash duty cycle before repeating the sensor test",
+      "Disable automatic dimming to force a brightness change"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "B116",
+    "category": "RMA / NetSuite",
+    "prompt": "A returned product arrived, but the technician cannot find a matching RMA. What is the proper action?",
+    "options": [
+      "Resolve the identification and log receipt to the correct RMA before proceeding",
+      "Issue the replacement SO before identifying which RMA covers the received unit",
+      "Return it directly to service stock and reconcile paperwork later",
+      "Receive the unit against the next available open RMA"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "B117",
+    "category": "RMA / NetSuite",
+    "prompt": "An RMA is ready to close, but Accounting has not finished the associated credit. What should the tech do?",
+    "options": [
+      "Keep the case/transaction open until required financial actions are complete",
+      "Open a second unrelated RMA to finish the credit after closure",
+      "Close the Case now but leave the RMA Pending Credit",
+      "Close the RMA as completed and let Accounting handle the missing memo later"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "B118",
+    "category": "RMA / NetSuite",
+    "prompt": "The returned unit is inspected, and the reported defect cannot be reproduced. What is the correct RMA response under the documented NFF policy?",
+    "options": [
+      "Document findings and apply the no-fault-found charge as applicable",
+      "Send a free replacement without documenting the inspection result",
+      "Close the Case with no finding because the symptom could not be reproduced",
+      "Automatically classify it as a warranty defect and issue full credit"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "B119",
+    "category": "RMA / NetSuite",
+    "prompt": "A customer returns three of four units on an approved RMA. What is the proper financial handling for the missing unit?",
+    "options": [
+      "Track the partial return and charge for the missing unit per policy",
+      "Close the Case and start an unrelated Case for the missing unit",
+      "Mark all four units received because the return shipment has arrived",
+      "Issue credit for all four and record the shortage as a warehouse variance"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "B120",
+    "category": "RMA / NetSuite",
+    "prompt": "A customer sends multiple related units in one return shipment. How should the standard transaction be organized?",
+    "options": [
+      "One linked RMA and one corresponding SO for the return",
+      "Create an RMA for each individual unit even if they belong to one Case",
+      "Create separate Sales Orders for each unit without referencing the common RMA",
+      "Accept all returns under a single SO without linking a Case or RMA"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "D001",
+    "category": "Power / Wi-Fi",
+    "prompt": "A Controller has just been safely power-cycled, but its setup Wi-Fi is not broadcasting. What should you check first?",
+    "options": [
+      "Verify battery power and fuse; isolate solar input if needed",
+      "Rebuild the mesh network IDs before verifying the power supply",
+      "Reinstall the Controller application before testing the fuse",
+      "Change the TC Connect login settings before checking voltage"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "D004",
+    "category": "Driver Feedback Signs",
+    "prompt": "Can you directly add a cellular modem to a standard iQ-series Driver Feedback Sign as a supported connection?",
+    "options": [
+      "No; that standard connection is not supported",
+      "Yes; connect a USB cellular modem to the sign's service connection",
+      "Yes; enable cellular connectivity in Pelco One settings",
+      "Yes; connect a compatible modem to the radar service port"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "D008",
+    "category": "Solar / Batteries",
+    "prompt": "A solar sign repeatedly loses power at a heavily shaded site. What is the most effective long-term recommendation?",
+    "options": [
+      "Move the panel out of shade or switch to an appropriately powered AC system",
+      "Replace the panel with the same model in the same shaded position",
+      "Install a higher-capacity battery without changing solar exposure",
+      "Add a second battery while leaving charging conditions unchanged"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "D012",
+    "category": "Mesh Communication",
+    "prompt": "What nominal distance guideline has the team used between an FSS Controller and its Collaborators?",
+    "options": [
+      "About 600 feet, subject to conditions",
+      "Approximately 150 feet",
+      "Approximately 1,200 feet",
+      "Approximately 300 feet"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "D013",
+    "category": "Mesh Communication",
+    "prompt": "A Controller and Collaborator will not communicate and both antennas are hidden behind poles. What is the likely problem?",
+    "options": [
+      "Obstructed line of sight and poor antenna positioning",
+      "Controller and Collaborator radio channels do not match",
+      "The Collaborator ID was never added to the group",
+      "One unit has a low battery voltage"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "D016",
+    "category": "Firmware / Tools",
+    "prompt": "What programmer is commonly used to flash the PIC firmware on a Controller or Collaborator board?",
+    "options": [
+      "MPLAB PICkit",
+      "TC Connect in a web browser",
+      "Pelco One desktop software",
+      "Synapse SNAP Stick"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "D017",
+    "category": "RMA / Distributor",
+    "prompt": "When a distributor requests an advanced replacement, how should their input be handled?",
+    "options": [
+      "Involve the distributor and obtain the required internal AR approval",
+      "Seek distributor input only after approving shipment internally",
+      "Contact the distributor only when the warranty has expired",
+      "Take distributor input only when the request came through Sales"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "D018",
+    "category": "Solar / Batteries",
+    "prompt": "Which battery configuration is specified for the M75-SA300-CTLT model in our training reference?",
+    "options": [
+      "Two 12 V, 35 Ah batteries",
+      "Two 12 V, 50 Ah batteries",
+      "One 12 V, 35 Ah battery",
+      "One 12 V, 100 Ah battery"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "D019",
+    "category": "FSS Configuration",
+    "prompt": "On a new FSS installation, Collaborators flash but the Controller is not behaving as expected. What setup step is commonly missing?",
+    "options": [
+      "Configure/program the Controller",
+      "Change the mesh radio channel without configuring operation",
+      "Increase the Collaborator output brightness",
+      "Swap the Controller antenna before loading its configuration"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "D025",
+    "category": "Controller Power",
+    "prompt": "Approximately how much current should the referenced Controller draw at idle with no external devices connected?",
+    "options": [
+      "15 mA",
+      "1.5 A",
+      "1.5 mA",
+      "150 mA"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "D053",
+    "category": "TC Connect Setup",
+    "prompt": "Where should an installer connect to configure a group of Collaborators?",
+    "options": [
+      "The Controller Wi-Fi network",
+      "A modem's public Wi-Fi hotspot",
+      "The SNAP Stick's programming connection",
+      "The nearest Collaborator's setup network"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D054",
+    "category": "TC Connect Setup",
+    "prompt": "What should an installer record before configuring an FSS group?",
+    "options": [
+      "Controller identity plus each Collaborator's six-character ID",
+      "Only the Collaborator serial labels, without their network IDs",
+      "Only the Controller model and mounting location",
+      "Only the number of Collaborators and their battery sizes"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D055",
+    "category": "TC Connect Setup",
+    "prompt": "An FSS radar is absent from the available setup choices after the Controller starts. What should be checked first?",
+    "options": [
+      "The radar was connected before Controller power-up",
+      "Whether a radar threshold was entered before the radar was detected",
+      "Whether the Controller and Collaborator antenna channels match",
+      "Whether the radar was paired to the phone after boot"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D056",
+    "category": "TC Connect Setup",
+    "prompt": "What is the best action if the installer is unsure whether the system is Push 2 Cross or Chevron?",
+    "options": [
+      "Confirm the intended design before selecting a configuration",
+      "Select Chevron whenever a radar is installed",
+      "Choose All Flash temporarily and configure the system later",
+      "Use Push 2 Cross by default because it can also drive flashers"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D057",
+    "category": "TC Connect Setup",
+    "prompt": "Which TC Connect screen should be checked for actual device communication and health?",
+    "options": [
+      "Status or Diagnostics",
+      "Scheduling / Day Plans",
+      "System Location",
+      "Flasher Brightness"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D058",
+    "category": "TC Connect Setup",
+    "prompt": "What should be done after a technician enters Collaborator IDs into a group?",
+    "options": [
+      "Test each activation and verify intended members respond",
+      "Test only the closest Collaborator and infer the others are working",
+      "Verify the Controller output once and assume the rest will follow",
+      "Confirm that the IDs appear on screen without triggering any inputs"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D059",
+    "category": "TC Connect Setup",
+    "prompt": "What is the correct TC Connect configuration for a standalone Controller installation without Collaborators?",
+    "options": [
+      "All Flash",
+      "Conflict Intersection",
+      "Push 2 Cross",
+      "Chevron"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "D060",
+    "category": "System Types",
+    "prompt": "What system type fits a sequence of illuminated chevrons through a curve?",
+    "options": [
+      "Chevron",
+      "Push 2 Cross",
+      "Conflict Intersection",
+      "All Flash"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "D061",
+    "category": "System Types",
+    "prompt": "What system type fits a sensor that triggers warnings when water is present?",
+    "options": [
+      "High Water",
+      "Push 2 Cross",
+      "Conflict Intersection",
+      "All Flash"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "D062",
+    "category": "System Types",
+    "prompt": "What system type is used when one approach warns traffic from a conflicting approach?",
+    "options": [
+      "Conflict Intersection",
+      "All Flash",
+      "Push 2 Cross",
+      "Chevron"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "D063",
+    "category": "Push 2 Cross",
+    "prompt": "In Push 2 Cross, what parameter controls how long the beacons flash after activation?",
+    "options": [
+      "Time to Cross",
+      "Cycle Period",
+      "Input Delay",
+      "Flash Rate"
+    ],
+    "hint": "Trace the trigger from the push button to the intended beacons and watch where the response changes."
+  },
+  {
+    "id": "D064",
+    "category": "Push 2 Cross",
+    "prompt": "What should the technician verify when a pedestrian button is pressed?",
+    "options": [
+      "All intended signs flash for the programmed interval",
+      "The group flashes, but crossing duration is not checked",
+      "Only the Controller's local output activates",
+      "One Collaborator flashes, regardless of group size"
+    ],
+    "hint": "Trace the trigger from the push button to the intended beacons and watch where the response changes."
+  },
+  {
+    "id": "D065",
+    "category": "Power / Dimming",
+    "prompt": "What happens to battery consumption when LED brightness is unnecessarily increased?",
+    "options": [
+      "Power consumption generally increases",
+      "LED brightness changes appearance but not energy use",
+      "Consumption stays constant because voltage is still 12 V",
+      "Higher brightness lowers LED current draw"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "D066",
+    "category": "Power / Dimming",
+    "prompt": "What is the purpose of automatic LED dimming?",
+    "options": [
+      "Adjust LED output to ambient light",
+      "Switch the unit between Controller and Collaborator modes",
+      "Change flash rate based on approaching vehicle speed",
+      "Adjust the radar's detection threshold with daylight"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "D067",
+    "category": "Troubleshooting",
+    "prompt": "An FSS shows partial behavior with the solar panel connected but a weak battery. What is the best next check?",
+    "options": [
+      "Measure the actual battery supply and connections",
+      "Reprogram the radio channel before measuring supply voltage",
+      "Adjust the flash duty cycle before inspecting the battery wiring",
+      "Reset the local Wi-Fi password as the first step"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "D068",
+    "category": "Troubleshooting",
+    "prompt": "A Collaborator does not appear in the Controller's configured group. What should you check?",
+    "options": [
+      "Its six-character ID was entered correctly",
+      "The system's flash pattern and rate are correct",
+      "The push-button input type is correct",
+      "Only the A/B output wiring was entered correctly"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "D069",
+    "category": "Troubleshooting",
+    "prompt": "If Collaborator communication is intermittent, which physical check is most useful?",
+    "options": [
+      "Antenna security, upright positioning, and obstructions",
+      "Change the radio channel before inspecting installed antennas",
+      "Re-enter all six-character IDs without examining placement",
+      "Reflash the mesh modules before verifying physical signal paths"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "D070",
+    "category": "Troubleshooting",
+    "prompt": "A site is shaded by trees for most daylight hours. What explains poor solar battery charging more directly than a battery defect?",
+    "options": [
+      "Insufficient solar exposure for recharge",
+      "The panel's nominal wattage on its product label",
+      "The configured LED duty cycle alone",
+      "The age of the existing Controller firmware alone"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "D071",
+    "category": "Driver Feedback Signs",
+    "prompt": "Which of these is a Driver Feedback Sign rather than an FSS role?",
+    "options": [
+      "iQ1200",
+      "Collaborator",
+      "Basic FSS module",
+      "Controller"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "D072",
+    "category": "Driver Feedback Signs",
+    "prompt": "Which tool is used to configure supported modern iQ models?",
+    "options": [
+      "Pelco One",
+      "TC Connect",
+      "Value-series keypad programming",
+      "Synapse Portal"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "D073",
+    "category": "Driver Feedback Signs",
+    "prompt": "When a new iQ sign shuts off after a short period, what should you check before condemning batteries?",
+    "options": [
+      "Charging source, battery voltage, connections, and site conditions",
+      "Replace the radar because the sign stopped displaying",
+      "Update firmware before measuring the charging circuit",
+      "Replace both batteries without measuring supply voltage"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "D074",
+    "category": "Firmware / Tools",
+    "prompt": "Why are the PICkit and SNAP Stick not interchangeable in standard workflows?",
+    "options": [
+      "They program different devices: PIC firmware versus mesh modules",
+      "Both program the PIC, but SNAP Stick also edits the SSID",
+      "They use different USB cables but flash the same processor",
+      "PICkit is for solar systems and SNAP Stick is for AC systems"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "D075",
+    "category": "Firmware / Tools",
+    "prompt": "After flashing firmware to a field board, what is a standard next step?",
+    "options": [
+      "Power-cycle and verify reported firmware and operation",
+      "Leave the device powered without confirming the reported version",
+      "Verify only that the HEX file was selected in the PC software",
+      "Assume successful programming means no functional test is needed"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "D076",
+    "category": "Bench / Serial",
+    "prompt": "What Windows application has the team used to send serial AT commands to Controllers?",
+    "options": [
+      "Tera Term",
+      "MPLAB IPE",
+      "Synapse Portal",
+      "Pelco One"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "D077",
+    "category": "Bench / Serial",
+    "prompt": "Which physical connector has the team commonly used for serial service on FSS boards?",
+    "options": [
+      "Radar port",
+      "RF antenna connector",
+      "DFB 2.0 USB-C firmware connector",
+      "Synapse programming header"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "D078",
+    "category": "RMA / NetSuite",
+    "prompt": "What must every RMA be linked to in NetSuite?",
+    "options": [
+      "The related support Case",
+      "The original invoice alone",
+      "The replacement Sales Order alone",
+      "The customer's purchase order alone"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "D079",
+    "category": "RMA / NetSuite",
+    "prompt": "Who can approve an Advanced Replacement under the documented SOP?",
+    "options": [
+      "Technical Services Lead or leadership",
+      "Any technician assigned to the Case",
+      "The distributor's service representative alone",
+      "Accounting without Technical Services approval"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "D080",
+    "category": "RMA / NetSuite",
+    "prompt": "Before shipping an Advanced Replacement, what transaction must exist?",
+    "options": [
+      "Sales Order",
+      "A completed RMA without a Sales Order",
+      "A Case without a Sales Order",
+      "A Credit Memo in place of a Sales Order"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "D081",
+    "category": "RMA / NetSuite",
+    "prompt": "Who is responsible for issuing Credit Memos in the documented RMA process?",
+    "options": [
+      "Accounting",
+      "Sales",
+      "Warehouse Receiving",
+      "Technical Services"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "D082",
+    "category": "RMA / NetSuite",
+    "prompt": "Under the active SOP, what is the default treatment of Out-of-Warranty returned units?",
+    "options": [
+      "Do not repair them; notify customer and return or scrap as appropriate",
+      "Replace it automatically at a discounted price",
+      "Process it under warranty if no new serial number is available",
+      "Repair the returned unit if the customer agrees to pay"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F002",
+    "category": "Customer Support",
+    "prompt": "What information should you request first when a customer calls about a malfunctioning sign?",
+    "options": [
+      "Serial number and/or model number",
+      "The installed firmware version and last service date",
+      "The symptoms and approximate date the issue began",
+      "The site location and type of power supply"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F003",
+    "category": "FSS Fundamentals",
+    "prompt": "What is the maximum number of devices supported in one typical FSS mesh group?",
+    "options": [
+      "16: one Controller and 15 Collaborators",
+      "8: one Controller and seven Collaborators",
+      "12: one Controller and eleven Collaborators",
+      "32: one Controller and thirty-one Collaborators"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F005",
+    "category": "Wi-Fi / Access",
+    "prompt": "The Controller's setup Wi-Fi appears and asks for a network key. Where should a tech verify the correct key?",
+    "options": [
+      "The approved Controller setup documentation for that model",
+      "The login instructions for the Controller's configuration page",
+      "The password saved for the laptop's usual office network",
+      "The setup instructions for a Driver Feedback Sign"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F006",
+    "category": "Wi-Fi / Access",
+    "prompt": "You joined the FSS Controller's Wi-Fi. Its configuration page now asks you to log in. What should you check?",
+    "options": [
+      "The approved local configuration login instructions for that Controller",
+      "The instructions for joining the Controller's Wi-Fi network",
+      "The sign's serial number and original sales order",
+      "The login steps for a TC-Remote customer account"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F007",
+    "category": "Driver Feedback Signs",
+    "prompt": "A tech needs to sign in to a Driver Feedback Sign interface. Which detail determines which login instructions apply?",
+    "options": [
+      "The specific sign model and interface or software version",
+      "The customer's original order date and shipping destination",
+      "The setup Wi-Fi name on a nearby Flashing Sign System",
+      "The tech's TC-Remote account email and browser version"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "F010",
+    "category": "Support Tools",
+    "prompt": "Which team support resource is intended to help technicians find troubleshooting answers while working a Case?",
+    "options": [
+      "Pelco Pete AI",
+      "Pelco One's device configuration screens",
+      "Synapse Portal's mesh programming console",
+      "TC Connect's setup pages"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F014",
+    "category": "Controller Identification",
+    "prompt": "Which Controller setup Wi-Fi SSID detail can indicate that its programmed network ID has been lost?",
+    "options": [
+      "0000FF in the Controller SSID",
+      "A missing location name after the setup prefix",
+      "FFFFFF in the Controller SSID",
+      "000000 in the Controller SSID"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F015",
+    "category": "Firmware / Tools",
+    "prompt": "What tool is used to program the Synapse/SNAP mesh module?",
+    "options": [
+      "SNAP Stick",
+      "MPLAB PICkit 5",
+      "USB-to-RS-232 serial adapter",
+      "TC Connect firmware update screen"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "F020",
+    "category": "Wi-Fi / Access",
+    "prompt": "Approximately how long does Controller setup Wi-Fi stay active after power-up?",
+    "options": [
+      "Two hours",
+      "One hour",
+      "Thirty minutes",
+      "Four hours"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F021",
+    "category": "Wi-Fi / Access",
+    "prompt": "How do you normally reactivate Controller setup Wi-Fi after it times out?",
+    "options": [
+      "Safely power-cycle the Controller",
+      "Re-enter the Wi-Fi password without restarting the unit",
+      "Reconnect the phone to the last saved network",
+      "Restart the installer phone's Wi-Fi radio"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F022",
+    "category": "Radar",
+    "prompt": "On the radar covered by our training, what does a steady red status LED indicate during testing?",
+    "options": [
+      "A target or detection has been observed",
+      "The radar is searching for the Controller's mesh network",
+      "The radar has power but has not detected a target",
+      "The radar's configuration has just been reset"
+    ],
+    "hint": "Treat detecting a target and activating the correct output as two separate checkpoints."
+  },
+  {
+    "id": "F023",
+    "category": "Radar",
+    "prompt": "How many radars are normally supported on one standard device in the team's setup?",
+    "options": [
+      "One",
+      "Four",
+      "Three",
+      "Two"
+    ],
+    "hint": "Treat detecting a target and activating the correct output as two separate checkpoints."
+  },
+  {
+    "id": "F024",
+    "category": "Driver Feedback Signs",
+    "prompt": "Which platforms have the team used with Pelco One to configure iQ-series Driver Feedback Signs?",
+    "options": [
+      "Android and Windows",
+      "Android and iOS",
+      "Android only",
+      "Windows only"
+    ],
+    "hint": "Keep the specific sign family in mind. Detection, the display, and configuration are separate checks."
+  },
+  {
+    "id": "F026",
+    "category": "FSS Fundamentals",
+    "prompt": "What does FSS stand for in our product discussions?",
+    "options": [
+      "Flashing Sign System",
+      "Flasher Sensor System",
+      "Field Sign Service",
+      "Flashing Signal System"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F031",
+    "category": "FSS Roles",
+    "prompt": "Which device normally coordinates Collaborators in an FSS?",
+    "options": [
+      "Controller",
+      "Mesh radio alone",
+      "Collaborator",
+      "Basic sign module"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F032",
+    "category": "FSS Roles",
+    "prompt": "Which FSS device type works as a mesh endpoint under a Controller?",
+    "options": [
+      "Collaborator",
+      "Basic sign module",
+      "Controller",
+      "TC-Remote"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F033",
+    "category": "FSS Roles",
+    "prompt": "Which FSS family is designed for standalone operation without mesh networking?",
+    "options": [
+      "Basic",
+      "TC-Remote",
+      "Controller",
+      "Collaborator"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F034",
+    "category": "Software",
+    "prompt": "What software is used for local configuration of an intelligent FSS?",
+    "options": [
+      "TC Connect",
+      "TC-Remote management interface",
+      "Synapse Portal",
+      "Pelco One"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F035",
+    "category": "Software",
+    "prompt": "What web address is used for local FSS setup after connecting to Controller Wi-Fi?",
+    "options": [
+      "setup.trafficalm.com",
+      "support.trafficalm.com",
+      "portal.trafficalm.com",
+      "connect.trafficalm.com"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F036",
+    "category": "Wi-Fi / Access",
+    "prompt": "Does local TC Connect setup require an Internet connection?",
+    "options": [
+      "No; it uses the Controller's local Wi-Fi",
+      "Yes; TC Connect cannot save settings without cellular data",
+      "Yes; mesh grouping always requires Internet access",
+      "Yes; the Controller must authenticate with the cloud"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F037",
+    "category": "Wi-Fi / Access",
+    "prompt": "If a phone says the Controller Wi-Fi has no Internet, what should the installer do?",
+    "options": [
+      "Stay connected to the Controller Wi-Fi",
+      "Switch to cellular data to load the local setup page",
+      "Reconnect to an Internet-capable hotspot before using TC Connect",
+      "Forget the Wi-Fi network because the connection failed"
+    ],
+    "hint": "Separate the step that connects your device from the step that configures or signs in to the product."
+  },
+  {
+    "id": "F038",
+    "category": "IDs / Records",
+    "prompt": "How many characters are used for the Collaborator identifier entered during FSS grouping?",
+    "options": [
+      "Six",
+      "Eight",
+      "Twelve",
+      "Four"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F039",
+    "category": "Power Basics",
+    "prompt": "Which instrument provides a numerical reading of battery and supply voltage?",
+    "options": [
+      "Multimeter",
+      "Non-contact AC voltage detector",
+      "Clamp-on ammeter measuring current only",
+      "Continuity-only tester"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "F040",
+    "category": "Solar / Batteries",
+    "prompt": "What component converts sunlight into electrical energy in a solar sign system?",
+    "options": [
+      "Solar panel",
+      "Battery bank",
+      "Controller electronics",
+      "Solar charge controller"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "F041",
+    "category": "Solar / Batteries",
+    "prompt": "What component stores energy for a solar-powered sign to operate at night?",
+    "options": [
+      "Battery",
+      "DC voltage regulator",
+      "Charge controller",
+      "Solar panel"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "F042",
+    "category": "Troubleshooting",
+    "prompt": "Before changing software settings on a dead sign, what should you confirm?",
+    "options": [
+      "The unit has usable power",
+      "Verify the Wi-Fi username and password",
+      "Reprogram the scheduling settings first",
+      "Recreate the mesh grouping first"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "F043",
+    "category": "Radar",
+    "prompt": "What does a flashing green LED on the referenced radar indicate?",
+    "options": [
+      "The radar is receiving power",
+      "A vehicle target has just been detected",
+      "The radar has joined a mesh group",
+      "The radar is indicating a power-supply fault"
+    ],
+    "hint": "Treat detecting a target and activating the correct output as two separate checkpoints."
+  },
+  {
+    "id": "F044",
+    "category": "Support Process",
+    "prompt": "What system is the official record for TraffiCalm support cases and RMAs?",
+    "options": [
+      "NetSuite",
+      "Pelco One",
+      "HelpDocs",
+      "TC Connect"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F045",
+    "category": "Support Process",
+    "prompt": "What does RMA stand for?",
+    "options": [
+      "Return Merchandise Authorization",
+      "Returned Module Assessment",
+      "Repair Management Agreement",
+      "Replacement Materials Approval"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F046",
+    "category": "Support Process",
+    "prompt": "What does SO mean in the RMA workflow?",
+    "options": [
+      "Sales Order",
+      "Stock Order",
+      "Service Order",
+      "Shipping Order"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F047",
+    "category": "Support Process",
+    "prompt": "What does CM stand for in the financial return workflow?",
+    "options": [
+      "Credit Memo",
+      "Customer Memorandum",
+      "Credit Management",
+      "Case Memo"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F048",
+    "category": "Support Process",
+    "prompt": "What does AR mean in the support replacement process?",
+    "options": [
+      "Advanced Replacement",
+      "Advance Repair",
+      "Authorized Return",
+      "Automatic Replacement"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F049",
+    "category": "Support Process",
+    "prompt": "What does OOW mean?",
+    "options": [
+      "Out of Warranty",
+      "Over Operating Wattage",
+      "On Order Warranty",
+      "Open Order Work"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F050",
+    "category": "Support Process",
+    "prompt": "In our RMA process, what does IW mean?",
+    "options": [
+      "In Warranty",
+      "In Warehouse",
+      "Internal Work Order",
+      "Inspection Waived"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "F051",
+    "category": "System Types",
+    "prompt": "Which TC Connect configuration is designed for button-triggered crossings?",
+    "options": [
+      "Push 2 Cross",
+      "All Flash",
+      "Chevron",
+      "Conflict Intersection"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "F052",
+    "category": "System Types",
+    "prompt": "Which TC Connect configuration is used for a general flasher with schedules or other triggers?",
+    "options": [
+      "All Flash",
+      "Conflict Intersection",
+      "Push 2 Cross",
+      "Chevron"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "M121",
+    "category": "Scenario: Power / Wi-Fi",
+    "prompt": "A solar Controller's Wi-Fi appears only in bright sun, then disappears by evening. The customer says its fuse looks fine. What is the strongest diagnosis plan?",
+    "options": [
+      "Measure battery voltage under load, inspect charging/power path, and eliminate solar-only partial power before software changes",
+      "Check the two-hour Wi-Fi window and disregard how sunlight affects operation",
+      "Replace the battery based on its age without measuring the charging current",
+      "Measure solar-panel voltage in full sun but skip battery measurements under load"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "M122",
+    "category": "Scenario: Power / Wi-Fi",
+    "prompt": "At an FSS site, no Wi-Fi is visible after a power cycle. The tech measures healthy battery voltage at the battery but not at the Controller. What is the next best test?",
+    "options": [
+      "Trace the fused supply path, wiring, and connectors between battery and Controller",
+      "Reset the Controller's Wi-Fi settings without tracing the supply wire",
+      "Replace the Controller board before checking whether the fused feed is open",
+      "Reflash the mesh module because no Wi-Fi is being broadcast"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "M123",
+    "category": "Scenario: RF",
+    "prompt": "A Controller sees three of four Collaborators. The missing unit responds on the bench, and its ID is correct. In the field it is mounted behind a steel pole. What should be tried first?",
+    "options": [
+      "Correct antenna placement and confirm usable RF path at the installation",
+      "Re-enter the six-character ID even though it was verified on the bench",
+      "Replace the mesh radio because the board was responsive during bench testing",
+      "Move the entire system to another mesh channel before checking the installed RF path"
+    ],
+    "hint": "Consider which devices can respond locally and where the link between them stops working."
+  },
+  {
+    "id": "M124",
+    "category": "Scenario: Commissioning",
+    "prompt": "A new Push 2 Cross installation has two approaches. Both buttons trigger one sign, but the far-side sign remains idle. The far-side unit has power. What is the most efficient next investigation?",
+    "options": [
+      "Verify the far-side Collaborator's group ID, mesh link, and configured output before changing hardware",
+      "Replace the far-side flasher module before checking the Controller output mapping",
+      "Reconfigure both button inputs, even though each activates the near-side sign",
+      "Extend the Time to Cross parameter across both approaches"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "M125",
+    "category": "Scenario: Commissioning",
+    "prompt": "A new scheduled FSS flashes during a bench test but not at its expected morning time. Manual activation works. What's the best systematic check?",
+    "options": [
+      "Confirm schedule is enabled, correct day plan assigned, and device date/time/time zone",
+      "Replace the activation input wiring without inspecting the enabled schedule",
+      "Increase the manual flash duration to match the expected schedule",
+      "Re-enter the Collaborator IDs because manual activation still works"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "M126",
+    "category": "Scenario: Chevron",
+    "prompt": "A five-unit dual-direction Chevron system flashes both sides, but vehicles entering from the west see the sequence moving against traffic. Which correction is most likely?",
+    "options": [
+      "Review western approach mapping and Output A/B wiring relative to Controller placement",
+      "Change the western radar threshold rather than verifying direction assignments",
+      "Reverse the stored collaborator sequence without comparing it to physical A/B wiring",
+      "Increase the sequence cycle period to make the direction less noticeable"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "M127",
+    "category": "Scenario: Chevron",
+    "prompt": "A Chevron system has eight units but is configured with subset size four. A tech reports pairs flashing simultaneously and calls it a firmware fault. What should you conclude?",
+    "options": [
+      "That pairing is expected for subset size four; compare the intended design before making changes",
+      "Shorten the cycle period until the paired activations are harder to distinguish",
+      "Check for duplicated six-character IDs before reviewing the subset configuration",
+      "Treat simultaneous flashes as a radio timing fault and check the mesh channel"
+    ],
+    "hint": "Compare the configured sequence and grouping with the physical order of the units."
+  },
+  {
+    "id": "M128",
+    "category": "Scenario: Radar",
+    "prompt": "A radar-driven system works with manual inputs, but no radar activation appears after the radar was plugged into a powered Controller. What is the next best step?",
+    "options": [
+      "Power down safely, connect radar, power up, and confirm detection/status before replacing hardware",
+      "Adjust minimum radar activation speed in the current setup session",
+      "Confirm the Controller mesh grouping before checking whether radar was detected on startup",
+      "Replace the radar because manual activation still works"
+    ],
+    "hint": "Treat detecting a target and activating the correct output as two separate checkpoints."
+  },
+  {
+    "id": "M129",
+    "category": "Scenario: Field Diagnostics",
+    "prompt": "A radar LED flashes green and turns red on targets, but RRFB outputs never flash. What is the most useful next focus?",
+    "options": [
+      "Verify the Controller's radar-trigger configuration, output wiring, and programmed operating mode",
+      "Check the radar mounting angle and target distance again despite a confirmed detection",
+      "Replace the radar cable because a red target indicator could still mean bad output data",
+      "Change the mesh radio channel before checking local activation and flasher wiring"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "M130",
+    "category": "Scenario: Firmware",
+    "prompt": "A firmware upgrade appears successful in the programming tool but the device does not display the expected application and cannot see its mesh radio. What is the best recovery approach?",
+    "options": [
+      "Verify PIC application/boot version and mesh image separately, then power-cycle and check device reports",
+      "Restore factory defaults before reading the current application and boot versions",
+      "Reinstall TC Connect configuration and assume that also restores radio firmware",
+      "Reload the last known PIC application and skip checking the separate mesh image"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "M131",
+    "category": "Scenario: Firmware",
+    "prompt": "A Controller flashed with the wrong collaborator application now appears to have a different role. What is the safest correction?",
+    "options": [
+      "Reflash the validated Controller application, verify role and versions, then retest mesh and outputs",
+      "Reset settings and select a Controller system type in TC Connect",
+      "Change the board profile through serial commands without checking the installed application",
+      "Reprogram the radio module as a Controller while leaving the Collaborator application loaded"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "M132",
+    "category": "Scenario: Firmware",
+    "prompt": "A technician plans to downgrade an installed Controller but has no saved configuration or matching release files. What is the correct decision?",
+    "options": [
+      "Capture current state and verify a supported recovery path before changing firmware",
+      "Proceed with the downgrade assuming the previous configuration will always survive",
+      "Use the most recent app-only file without recording the current setup",
+      "Factory-erase the device before confirming a matching recovery image"
+    ],
+    "hint": "Match the release and tool to the exact hardware role, then verify the unit after it restarts."
+  },
+  {
+    "id": "M133",
+    "category": "Scenario: Serial",
+    "prompt": "A new USB-to-serial adapter opens a COM port but no ATI response appears. A known-good adapter shows approximately negative RS-232 voltage, while the new adapter reads positive logic voltage. What is the likely cause?",
+    "options": [
+      "Electrical-level/interface mismatch; verify a proper RS-232 adapter and pinout",
+      "The Controller's mesh channel is wrong and blocks its wired serial port",
+      "TX and RX are reversed, which also explains the positive logic voltage",
+      "The serial baud rate is wrong but the electrical interface is definitely compatible"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "M134",
+    "category": "Scenario: Serial",
+    "prompt": "A board returns garbled characters on Tera Term after a cable repair. What is the best first-response test sequence?",
+    "options": [
+      "Verify COM port and baud, confirm correct cable wiring/levels, reseat connections, then retest ATI",
+      "Reflash the PIC application before checking the repaired wiring",
+      "Factory-reset the Controller because all garbled terminal text is corrupted firmware",
+      "Change the mesh radio channel before checking serial baud and signal level"
+    ],
+    "hint": "Verify the physical connection, device identity, and communication settings before changing firmware."
+  },
+  {
+    "id": "M135",
+    "category": "Scenario: RMA",
+    "prompt": "A distributor wants an AR shipment immediately but the serial number cannot be verified and no manager has approved it. What should the tech do?",
+    "options": [
+      "Hold AR, obtain verified identifiers and required approval, then create linked RMA/SO",
+      "Ship against the distributor's verbal assurance and document the serial later",
+      "Create the replacement SO and ship before obtaining the required AR approval",
+      "Issue the RMA without verifying the unit, then confirm warranty after delivery"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "M136",
+    "category": "Scenario: RMA",
+    "prompt": "An AR was shipped, 60 days have passed, and the unit was never returned. How should the documented policy be applied?",
+    "options": [
+      "Follow the 60-day credit-hold and charge process, documenting the case",
+      "Keep extending the AR with no credit hold until the customer returns the unit",
+      "Issue a credit based on the replacement shipment despite the missing original",
+      "Close the RMA as received since the replacement has already shipped"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "M137",
+    "category": "Scenario: RMA",
+    "prompt": "A technician closes both an RMA at Pending Credit and its Case before Accounting issues a Credit Memo. What is the central process failure?",
+    "options": [
+      "Closure occurred before all required financial transactions and documentation were finalized",
+      "The technician should have issued the Credit Memo rather than waiting for Accounting",
+      "The technician should have created a new Case specifically for the credit",
+      "The RMA should have been marked Received even though the credit was unfinished"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "M138",
+    "category": "Scenario: RMA",
+    "prompt": "A returned product is out of warranty, but one accessory from the same shipment is in warranty. What should happen under the mixed-status policy?",
+    "options": [
+      "Reject OOW work and obtain customer approval to proceed with the IW portion",
+      "Reject the entire shipment without asking whether the customer wants the IW work",
+      "Repair the OOW item as a paid service while replacing the IW accessory",
+      "Process both items as in warranty because they arrived in one shipment"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "M139",
+    "category": "Scenario: RMA",
+    "prompt": "An AR replacement is approved, but someone creates a Sales Order with pricing that differs from the related RMA. What is the right correction?",
+    "options": [
+      "Reconcile linked RMA and SO values before fulfillment and document the change",
+      "Create a second Sales Order for the difference without correcting the first",
+      "Close the RMA with its current values and ask Accounting to adjust the Credit Memo later",
+      "Ship using the Sales Order pricing and reconcile the RMA after delivery"
+    ],
+    "hint": "Identify the unit, then trace the evidence or record that proves the specific step was completed."
+  },
+  {
+    "id": "M140",
+    "category": "Scenario: End-to-End",
+    "prompt": "A customer reports that two of four solar iQ signs installed three months ago have stopped working. What is the best initial support response?",
+    "options": [
+      "Record IDs and symptoms, compare power/charging and site exposure, and troubleshoot before assuming battery end-of-life",
+      "Replace both batteries before collecting voltages or charging measurements",
+      "Initiate Advanced Replacements because half the installed signs have failed",
+      "Assume that three months is a normal solar battery replacement interval"
+    ],
+    "hint": "Choose the test that isolates the next uncertain step with the fewest changes to the system."
+  },
+  {
+    "id": "W01",
+    "category": "FSS Fundamentals",
+    "prompt": "Which three device families are found in TraffiCalm Flashing Sign Systems?",
+    "options": [
+      "Basic, Controller, Collaborator",
+      "Basic, Collaborator, TC-Remote",
+      "Basic, Controller, Coordinator",
+      "Controller, Collaborator, Gateway"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "W02",
+    "category": "Product Families",
+    "prompt": "What are TraffiCalm's two primary product families in this training?",
+    "options": [
+      "Flashing Sign Systems and Driver Feedback Signs",
+      "Driver Feedback Signs and traffic counters",
+      "Flashing Sign Systems and RRFB accessories",
+      "Controllers and Collaborators"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "W03",
+    "category": "Power Basics",
+    "prompt": "What nominal DC operating voltage is common for TraffiCalm field devices?",
+    "options": [
+      "12 VDC",
+      "48 VDC",
+      "6 VDC",
+      "24 VDC"
+    ],
+    "hint": "Trace power from the source to the device under the conditions where the symptom appears."
+  },
+  {
+    "id": "W04",
+    "category": "Flashing Signs",
+    "prompt": "What does RRFB stand for?",
+    "options": [
+      "Rectangular Rapid Flashing Beacon",
+      "Rectangular Radar Flashing Beacon",
+      "Remote Rectangular Flasher Beacon",
+      "Rapid Roadside Flashing Beacon"
+    ],
+    "hint": "Identify the device's assigned role and which part of the system owns the behavior in the question."
+  },
+  {
+    "id": "W05",
+    "category": "RMA intake",
+    "prompt": "How can a customer start an RMA for a TraffiCalm product?",
+    "options": [
+      "Use the website form or email TechSupport@pelcosolutions.com",
+      "Create a firmware ticket in Pelco One",
+      "Request a return through the updater",
+      "Send a package directly to the repair bench"
+    ],
+    "hint": "One option is a customer-facing form. The other goes to Technical Services.",
+    "explanation": "The website RMA form and TechSupport@pelcosolutions.com are the two intake routes."
+  }
+]

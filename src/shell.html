@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Who wants to be a TraffiCalm Technician!</title>
+<style>
+/* STYLES */
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand"><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i></span>TraffiCalm</div>
+  <button id="sound-toggle" class="sound-toggle" type="button" aria-label="Game sound" aria-pressed="true">Sound on</button>
+</div></header>
+<main class="wrap">
+  <section id="home" aria-labelledby="home-title">
+    <article class="stage hero">
+      <div class="hero-copy">
+        <p class="kicker">Tech Services quiz</p>
+        <h1 id="home-title"><span class="lead-in">Who wants to be a</span> <span>TraffiCalm</span> <span class="gold-title">Technician!</span></h1>
+        <p class="lede">15 scored questions. Three lifelines. Play your way to greatness</p>
+        <form id="entry" class="entry">
+          <div class="entry-row">
+            <label for="player">Contestant name
+              <input id="player" maxlength="28" placeholder="Enter your name" autocomplete="off">
+            </label>
+            <button class="primary" type="submit">Take the hot seat →</button>
+          </div>
+          <label class="tutorial-option" for="tutorial-enabled">
+            <input id="tutorial-enabled" type="checkbox" checked>
+            Play the 5-question tutorial
+          </label>
+          <fieldset class="mode-picker">
+            <legend>Difficulty</legend>
+            <div class="mode-options">
+              <label class="mode-option"><strong><input id="mode-pro" type="radio" name="difficulty" value="pro" checked> Pro</strong><span>0 continues</span></label>
+              <label class="mode-option"><strong><input id="mode-intermediate" type="radio" name="difficulty" value="intermediate"> Intermediate</strong><span>1 continue</span></label>
+              <label class="mode-option"><strong><input id="mode-easy" type="radio" name="difficulty" value="easy"> Easy</strong><span>Unlimited continues</span></label>
+            </div>
+            <p class="micro">Continues cover wrong answers and timeouts. Pro runs qualify for high scores.</p>
+          </fieldset>
+        </form>
+      </div>
+    </article>
+    <div class="home-grid">
+      <article class="panel score-panel" aria-labelledby="scores-title">
+        <div class="score-head"><h2 id="scores-title">High scores</h2><span class="muted">Pro · This browser</span></div>
+        <div id="scoreboard"></div>
+        <p class="micro">Ranked by correct answers out of 15, then fastest answer time.</p>
+        <details id="prior-scores" class="review" hidden><summary>Earlier 20-question scores</summary><div id="prior-scoreboard"></div></details>
+        <p class="micro" id="storage-note" hidden>Browser storage is unavailable. Scores will last until this page closes.</p>
+      </article>
+      <article class="panel rules">
+        <div class="section-head"><h2>Round timing</h2><span class="micro" id="bank-count"></span></div>
+        <div class="rules-grid">
+          <div class="rule"><strong>Q1–5 · Tutorial</strong><span>Optional · untimed</span></div>
+          <div class="rule"><strong>Q6–10 · Fundamentals</strong><span>20 seconds</span></div>
+          <div class="rule"><strong>Q11–14 · Diagnostics</strong><span>40 seconds</span></div>
+          <div class="rule"><strong>Q15–19 · Bench scenarios</strong><span>60 seconds</span></div>
+          <div class="rule"><strong>Q20 · Final question</strong><span>45 seconds + banked time</span></div>
+        </div>
+        <p class="micro">Each timed question starts with up to 20 seconds to read the question. Choose Start answering to show the choices early. The answer clock starts when the choices appear.</p>
+        <p class="micro">Correct timed answers bank unused seconds. Each lifeline pauses the clock. When a wrong answer or a Double Dip timeout ends the run, you keep your last guaranteed checkpoint. A regular timeout or walk-away pays current earnings.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="intro" class="stage intro-stage" hidden aria-labelledby="intro-title">
+    <div class="intro-copy">
+      <div>
+        <h1 id="intro-title" tabindex="-1"></h1>
+        <p id="intro-note"></p>
+      </div>
+      <button id="skip-intro" class="quiet" type="button">Skip intro →</button>
+    </div>
+  </section>
+
+  <section id="game" hidden aria-labelledby="prompt">
+    <div class="game-top"><div class="contestant-name"><span class="overline">In the hot seat</span><strong id="game-player"></strong><span class="micro" id="game-mode"></span></div><button id="walk" class="text-btn" type="button">Walk away</button></div>
+    <div class="game-grid">
+      <article class="panel console">
+        <div class="status-bar">
+          <div class="stat"><small id="progress-label">Question</small><strong id="progress"></strong></div>
+          <div class="stat"><small id="clock-label">On the clock</small><strong id="clock"></strong></div>
+          <div class="stat"><small>Time bank</small><strong id="bank"></strong></div>
+        </div>
+        <div class="meter" aria-hidden="true"><div id="meter-fill"></div></div>
+        <div class="question-area">
+          <p id="category" class="overline"></p>
+          <h1 id="prompt" tabindex="-1"></h1>
+          <div id="reading-controls" class="game-actions reading-actions" hidden>
+            <p class="micro">Choices appear when reading time ends.</p>
+            <button id="start-answering" class="primary" type="button">Start answering →</button>
+          </div>
+          <div id="answers" class="answers" aria-label="Answer choices"></div>
+          <p class="feedback" id="feedback" role="status" hidden></p>
+          <div id="answer-controls" class="game-actions">
+            <span id="selection-note" class="micro">Choose an answer, then lock it in.</span>
+            <button id="lock" class="primary" type="button" disabled>Lock in answer</button>
+            <button id="next" class="primary" type="button" hidden>Next question →</button>
+          </div>
+        </div>
+        <div id="life-area" class="life-area">
+          <h2 class="overline">Lifelines · once per run</h2>
+          <div class="life-buttons">
+            <button class="quiet" data-life="half" type="button">50/50</button>
+            <button class="quiet" data-life="hint" type="button">Bench Hint</button>
+            <button class="quiet" data-life="dip" type="button">Double Dip</button>
+          </div>
+        </div>
+      </article>
+      <aside class="panel ladder" aria-labelledby="ladder-title">
+        <h2 id="ladder-title">Prize ladder</h2>
+        <ol id="ladder" reversed></ol>
+        <p class="micro key">◆ Guaranteed checkpoint</p>
+        <p class="micro key">Starting guarantee <strong id="base-guarantee"></strong></p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="result" class="panel result" hidden aria-labelledby="result-title">
+    <div id="victory-stage" class="stage victory-stage" aria-hidden="true" hidden><div id="money-rain"></div></div>
+    <p class="kicker">Final score</p>
+    <h1 id="result-title" tabindex="-1"></h1>
+    <p id="result-cash"></p>
+    <p class="muted" id="result-note"></p>
+    <p class="micro" id="result-mode"></p>
+    <div class="result-stats" id="result-stats"></div>
+    <details class="review" id="review"><summary>Review answers</summary><ol id="review-list" start="6"></ol></details>
+    <div class="game-actions">
+      <button id="home-button" class="quiet" type="button">Home &amp; high scores</button>
+      <button id="again" class="primary" type="button">Play again →</button>
+    </div>
+  </section>
+</main>
+<dialog id="pause-dialog" aria-labelledby="dialog-title">
+  <p id="dialog-kicker" class="overline"></p>
+  <h2 id="dialog-title"></h2>
+  <p id="dialog-body" class="muted"></p>
+  <div class="dialog-actions">
+    <button id="dialog-cancel" class="quiet" type="button">Cancel</button>
+    <button id="dialog-action" class="primary" type="button"></button>
+  </div>
+</dialog>
+<script>
+/* QUESTION_BANK */
+</script>
+<script>
+/* GAME_ENGINE */
+</script>
+</body>
+</html>
