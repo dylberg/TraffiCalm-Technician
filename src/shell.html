@@ -28,6 +28,7 @@
             </label>
             <button class="primary" type="submit">Take the hot seat →</button>
           </div>
+          <p class="micro" id="public-name-note" hidden>Use initials or a nickname. Pro scores are public.</p>
           <label class="tutorial-option" for="tutorial-enabled">
             <input id="tutorial-enabled" type="checkbox" checked>
             Play the 5-question tutorial
@@ -46,8 +47,9 @@
     </article>
     <div class="home-grid">
       <article class="panel score-panel" aria-labelledby="scores-title">
-        <div class="score-head"><h2 id="scores-title">High scores</h2><span class="muted">Pro · This browser</span></div>
+        <div class="score-head"><h2 id="scores-title">High scores</h2><span class="muted" id="score-scope">Pro · This browser</span></div>
         <div id="scoreboard"></div>
+        <p class="micro" id="shared-board-note" hidden>Shared scores are unavailable. Showing scores saved on this device.</p>
         <p class="micro">Ranked by correct answers out of 15, then fastest answer time.</p>
         <details id="prior-scores" class="review" hidden><summary>Earlier 20-question scores</summary><div id="prior-scoreboard"></div></details>
         <p class="micro" id="storage-note" hidden>Browser storage is unavailable. Scores will last until this page closes.</p>
@@ -127,6 +129,7 @@
     <p id="result-cash"></p>
     <p class="muted" id="result-note"></p>
     <p class="micro" id="result-mode"></p>
+    <p class="micro" id="share-status" role="status" hidden></p>
     <div class="result-stats" id="result-stats"></div>
     <details class="review" id="review"><summary>Review answers</summary><ol id="review-list" start="6"></ol></details>
     <div class="game-actions">

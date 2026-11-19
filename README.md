@@ -8,7 +8,7 @@ A browser-based training game with 15 scored questions, three lifelines, and an 
 2. In the repository's **Settings → Pages**, select **Deploy from a branch**. Choose `main` and `/docs`, then save.
 3. Open the link shown under **Settings → Pages** once deployment finishes.
 
-`docs/index.html` is already built. GitHub Pages can be publicly accessible even when its repository is private. The quiz presents its questions and answer key in the page source, so confirm the bank is approved for your intended audience before publishing. Scores are stored in the current browser. [GitHub Pages publishing guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [GitHub Pages visibility](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+`docs/index.html` is already built. GitHub Pages can be publicly accessible even when its repository is private. The quiz presents its questions and answer key in the page source, so confirm the bank is approved for your intended audience before publishing. The live game shares Pro scores across browsers. Use initials or a nickname on the public board. Offline play stores scores on the current device. [GitHub Pages publishing guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [GitHub Pages visibility](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 ## Update questions
 
@@ -24,3 +24,10 @@ A browser-based training game with 15 scored questions, three lifelines, and an 
 | `M` | Final, Q20 |
 
 3. From the repository folder, run `py build.py` on Windows or `python3 build.py` on macOS or Linux. Open the rebuilt `docs/index.html` to test, then commit the question file and the rebuilt page.
+
+
+## Maintain the shared leaderboard
+
+The Workers API uses D1 to retain the top Pro scores. The Worker generates a question deck for each ranked run and checks the submitted answers. Finish requests are idempotent.
+
+After a scored question changes, run `py build.py --worker-output leaderboard-worker.js` on Windows or `python3 build.py --worker-output leaderboard-worker.js` on macOS or Linux. Deploy the generated Worker to the leaderboard service and publish the rebuilt `docs/index.html` together. Both use a question-bank revision to keep scoring consistent. The worker source and D1 schema are in `leaderboard/`.

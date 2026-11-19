@@ -19,6 +19,10 @@ const sequence = Object.entries(FRAMES).flatMap(([key, tier]) => Array(tier.coun
 const tutorialCount = FRAMES.W.count;
 const scoredCount = sequence.length - tutorialCount;
 const pools = Object.fromEntries(Object.keys(FRAMES).map((key) => [key, QUESTION_BANK.filter((item) => item.id[0] === key)]));
+const rankingEndpoint = "https://trafficalm-technician-scores.upperlily4.chatgpt.site";
+const sharedRanking = globalThis.location?.origin === "https://dylberg.github.io";
+const bankRevision = "/* BANK_REVISION */";
+let sharedScores;
 const prizes = [100, 200, 300, 500, 1000, 2500, 5000, 7500, 12500, 25000, 35000, 50000, 75000, 100000, 150000, 200000, 300000, 450000, 650000, 1000000];
 const checkpoints = [tutorialCount, 10, 14];
 const modes = {
@@ -69,6 +73,7 @@ function shuffled(items) {
 function draw(tier, index) {
   if (tier === "W") return pools.W[index];
   const bank = pools[tier];
+  if (run.ranked) return bank.find((item) => item.id === run.ranked.deck[index - tutorialCount]);
   const ids = new Map(bank.map((item) => [item.id, item]));
   const previous = Array.isArray(saved.decks[tier]) ? saved.decks[tier] : [];
   let deck = [...new Set(previous)].filter((id) => ids.has(id));
@@ -103,13 +108,75 @@ function bankLabel(ms) {
 function renderScores() {
   const host = byId("scoreboard");
   host.replaceChildren();
-  if (saved.scoredScores.length) {
-    host.append(scoreTable(saved.scoredScores, scoredCount, "High scores for this browser"));
+  const scores = sharedScores ?? saved.scoredScores;
+  byId("score-scope").textContent = sharedScores ? "Pro · Shared" : "Pro · This browser";
+  if (sharedRanking && sharedScores === undefined) {
+    host.append(node("p", "Loading shared scores…", "empty"));
+  } else if (scores.length) {
+    host.append(scoreTable(scores, scoredCount, sharedScores ? "Shared Pro high scores" : "High scores for this browser"));
   } else {
     host.append(node("p", "Play the scored rounds to set the first score.", "empty"));
   }
+  byId("shared-board-note").hidden = !sharedRanking || sharedScores !== null;
   byId("prior-scores").hidden = saved.scores.length === 0;
   if (saved.scores.length) byId("prior-scoreboard").replaceChildren(scoreTable(saved.scores, sequence.length, "Earlier 20-question scores"));
+}
+
+async function rankingRequest(path, body) {
+  const options = {signal: AbortSignal.timeout(3500), credentials: "omit"};
+  if (body !== undefined) {
+    options.method = "POST";
+    options.headers = {"Content-Type": "application/json"};
+    options.body = JSON.stringify(body);
+  }
+  const response = await fetch(rankingEndpoint + "/api/" + path, options);
+  if (!response.ok) throw new Error("Shared leaderboard request failed");
+  return response.json();
+}
+
+async function refreshSharedScores() {
+  try {
+    const result = await rankingRequest("scores");
+    if (!Array.isArray(result.scores)) throw new Error("Invalid leaderboard response");
+    sharedScores = result.scores;
+  } catch {
+    sharedScores = null;
+  }
+  renderScores();
+}
+
+async function prepareRankedRun() {
+  try {
+    const ranked = await rankingRequest("runs", {revision: bankRevision});
+    const {id, deck} = ranked;
+    if (typeof id !== "string" || !Array.isArray(deck) || deck.length !== scoredCount
+        || new Set(deck).size !== scoredCount
+        || !deck.every((id, i) => pools[sequence[i + tutorialCount]].some((item) => item.id === id))) return null;
+    return ranked;
+  } catch {
+    return null;
+  }
+}
+
+async function shareProScore(completed, reason) {
+  const status = byId("share-status");
+  if (!completed.ranked) {
+    status.textContent = "Shared scores were unavailable when this run started. Your score was saved on this device.";
+    return;
+  }
+  status.textContent = "Saving your Pro score to the shared board…";
+  try {
+    await rankingRequest("runs/finish", {
+      id: completed.ranked.id,
+      displayName: completed.name,
+      reason,
+      answers: completed.history.map(({item, answer, milliseconds}) => ({id: item.id, choice: answer, milliseconds})),
+    });
+    if (run === completed) status.textContent = "Pro score saved to the shared board.";
+    void refreshSharedScores();
+  } catch {
+    if (run === completed) status.textContent = "Shared submission failed. Your score was saved on this device.";
+  }
 }
 
 function scoreTable(scores, questionCount, label) {
@@ -203,7 +270,11 @@ function stopCue() {
 function takeSeat(name) {
   const withTutorial = byId("tutorial-enabled").checked;
   const mode = Object.keys(modes).find((key) => byId("mode-" + key).checked) ?? "pro";
-  showInterlude("entrance", "Take your seat, " + name + ".", "15 scored questions stand between you and $1,000,000.", "Skip intro →", 4800, () => start(name, withTutorial, mode));
+  const pending = sharedRanking && mode === "pro" ? prepareRankedRun() : null;
+  showInterlude("entrance", "Take your seat, " + name + ".", "15 scored questions stand between you and $1,000,000.", "Skip intro →", 4800, () => {
+    if (pending) void pending.then((ranked) => start(name, withTutorial, mode, ranked));
+    else start(name, withTutorial, mode);
+  });
   playCue(entranceNotes);
 }
 
@@ -226,10 +297,10 @@ function endInterlude() {
   done();
 }
 
-function start(name, withTutorial = true, mode = "pro") {
+function start(name, withTutorial = true, mode = "pro", ranked = null) {
   run = {
     name, index: withTutorial ? 0 : tutorialCount, correct: 0, bank: 0, elapsed: 0, history: [],
-    mode, continues: modes[mode].continues, earnedLevel: tutorialCount, guaranteedLevel: tutorialCount,
+    mode, ranked, continues: modes[mode].continues, earnedLevel: tutorialCount, guaranteedLevel: tutorialCount,
     seen: new Set(), used: new Set(), question: null, done: false,
   };
   byId("game-player").textContent = name;
@@ -247,7 +318,9 @@ function isFinalQuestion() {
 
 function updateRunMode() {
   const mode = modes[run.mode];
-  const details = run.mode === "intermediate" ? " · " + (run.continues ? "1 continue left" : "Continue used") : "";
+  let details = "";
+  if (run.mode === "intermediate") details = run.continues ? " · 1 continue left" : " · Continue used";
+  if (sharedRanking && run.mode === "pro") details = run.ranked ? " · Shared ranking" : " · Device-only score";
   byId("game-mode").textContent = mode.label + details;
 }
 
@@ -401,7 +474,8 @@ function select(index) {
 }
 
 function addHistory(answer, correct) {
-  run.history.push({number: run.index + 1, item: run.question.item, answer, correct});
+  const {item, total, left} = run.question;
+  run.history.push({number: run.index + 1, item, answer, correct, milliseconds: Math.round(total - left)});
 }
 
 function lockAnswer() {
@@ -579,6 +653,10 @@ function finish(reason) {
   byId("result-title").textContent = outcomes[reason][0];
   byId("result-note").textContent = outcomes[reason][1];
   byId("result-mode").textContent = run.mode === "pro" ? "Pro mode" : modes[run.mode].label + " mode · practice result";
+  const shareStatus = byId("share-status");
+  shareStatus.textContent = "";
+  shareStatus.hidden = !sharedRanking || run.mode !== "pro";
+  if (!shareStatus.hidden) void shareProScore(run, reason);
   byId("result-cash").textContent = currency.format(prizes[prizeLevel - 1] ?? 0);
   const stats = [["Correct answers", run.correct + " / " + scoredCount], ["Answer time", timeLabel(score.elapsed)], ["Time bank", bankLabel(run.bank)]];
   byId("result-stats").replaceChildren(...stats.map(([label, value]) => {
@@ -624,8 +702,16 @@ function returnHome() {
 
 byId("entry").addEventListener("submit", (event) => {
   event.preventDefault();
-  takeSeat(byId("player").value.trim() || "Player");
+  const player = byId("player");
+  const name = player.value.trim().normalize("NFC") || "Player";
+  if (sharedRanking && !/^[\p{L}\p{N} ._'’-]{1,24}$/u.test(name)) {
+    player.setCustomValidity("Use 1–24 characters for initials or a nickname.");
+    player.reportValidity();
+    return;
+  }
+  takeSeat(name);
 });
+byId("player").addEventListener("input", (event) => event.target.setCustomValidity(""));
 byId("skip-intro").addEventListener("click", endInterlude);
 byId("tutorial-enabled").addEventListener("change", (event) => {
   saved.tutorial = event.currentTarget.checked;
@@ -697,3 +783,8 @@ byId("tutorial-enabled").checked = saved.tutorial !== false;
 byId("mode-pro").checked = true;
 updateSoundControl();
 renderScores();
+if (sharedRanking) {
+  byId("public-name-note").hidden = false;
+  byId("player").maxLength = 24;
+  void refreshSharedScores();
+}
